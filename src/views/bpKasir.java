@@ -431,7 +431,7 @@ public class bpKasir extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nama", "Alamat", "No Telp"
+                "Tanggal Masuk", "ID Buku", "ISBN", "Judul", "Penulis", "Stok", "Harga", "Kategori", "Penerbit", "Tahun Terbit"
             }
         ));
         tbBuku.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -566,15 +566,14 @@ public class bpKasir extends javax.swing.JFrame {
                                     .addComponent(tfNoCust3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(tfNoCust4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(lNoCust4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelBukuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelBukuLayout.createSequentialGroup()
-                        .addGap(210, 210, 210)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBukuLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfSearchBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBukuLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(tfSearchBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelBukuLayout.setVerticalGroup(
             panelBukuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -587,9 +586,9 @@ public class bpKasir extends javax.swing.JFrame {
                     .addComponent(tfIDBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfSearchBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
+                .addGap(12, 12, 12)
                 .addGroup(panelBukuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelBukuLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
                         .addGroup(panelBukuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfNamaCust1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lIDBuku1, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -637,9 +636,7 @@ public class bpKasir extends javax.swing.JFrame {
                         .addGroup(panelBukuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnHapusBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnResetBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelBukuLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
         );
 
@@ -1034,7 +1031,7 @@ public class bpKasir extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
         );
         panelSuppLayout.setVerticalGroup(
@@ -1074,7 +1071,7 @@ public class bpKasir extends javax.swing.JFrame {
                             .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         mainPanel.add(panelSupp, "card2");
@@ -1383,14 +1380,14 @@ public class bpKasir extends javax.swing.JFrame {
 
     private void btnUbahCustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahCustActionPerformed
 
-        // Merubah Supp
+        // Merubah Cust
         try {
             String sql = "UPDATE PELANGGAN SET NAMA_PELANGGAN = '" + tfNamaCust.getText() + "', ALAMAT_PELANGGAN = '" + tfAlamatCust.getText() + "', NO_TELP_PELANGGAN = '" + tfNoCust.getText() + "' WHERE ID_PELANGGAN = '" + tfIDCust.getText() + "'";
             st = conn.createStatement();
             st.executeUpdate(sql);
             JOptionPane.showMessageDialog(null, "Data telah diperbarui!");
             clear();
-            tampilSupp();
+            tampilCust();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
