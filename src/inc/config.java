@@ -31,5 +31,7 @@ public class config {
     public static void main(String[] args) {
         System.out.println(config.Conn());
         System.out.println("connect hyung");
+
+
     }
 }
